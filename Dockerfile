@@ -1,4 +1,7 @@
 FROM node:20-alpine AS base
+# Retry npm ci a few times: prebuild-install (sqlite3/bcrypt) occasionally
+# hits transient timeouts fetching prebuilt binaries on this runner's network.
+RUN printf '#!/bin/sh\nfor i in 1 2 3 4 5; do\n  npm ci "$@" && exit 0\n  echo "npm ci failed (attempt $i/5), retrying in 10s..." >&2\n  sleep 10\ndone\nexit 1\n' > /usr/local/bin/npm-ci-retry && chmod +x /usr/local/bin/npm-ci-retry
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -8,17 +11,17 @@ WORKDIR /app
 
 # Install root dependencies
 COPY package.json package-lock.json* ./
-RUN npm ci
+RUN npm-ci-retry
 
 # Install frontend dependencies
 WORKDIR /app/frontend
 COPY frontend/package.json frontend/package-lock.json* ./
-RUN npm ci
+RUN npm-ci-retry
 
 # Install backend dependencies
 WORKDIR /app/backend
 COPY backend/package.json backend/package-lock.json* ./
-RUN npm ci
+RUN npm-ci-retry
 
 # Build frontend
 FROM base AS frontend-builder
@@ -83,7 +86,7 @@ COPY --from=deps /app/frontend/node_modules/next ./node_modules/next
 RUN apk add --no-cache python3 make g++
 WORKDIR /app/backend
 COPY backend/package.json backend/package-lock.json* ./
-RUN npm ci --omit=dev
+RUN npm-ci-retry --omit=dev
 WORKDIR /app
 
 ## remove .env
