@@ -1,4 +1,5 @@
 FROM node:20-alpine AS base
+ENV npm_config_build_from_source=true
 
 # Install dependencies only when needed
 FROM base AS deps
