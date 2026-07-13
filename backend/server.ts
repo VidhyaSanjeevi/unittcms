@@ -42,20 +42,25 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // __dirname is backend/ in dev (ts-node) and backend/dist/ in production (compiled)
 const backendDir = path.basename(__dirname) === 'dist' ? path.resolve(__dirname, '..') : __dirname;
 const databasePath = process.env.DATABASE_PATH ?? path.resolve(backendDir, 'database/database.sqlite');
-export const sequelize = new Sequelize({
-  dialect: 'sqlite',
-  storage: databasePath,
-  logging: false,
-  dialectOptions: {
-    busyTimeout: 5000,
-  },
-  pool: {
-    max: 1,
-    min: 0,
-    acquire: 10000,
-    idle: 10000,
-  },
-});
+
+// DB_DIALECT: 'sqlite' (default) or 'postgres'. Postgres reads connection info from DATABASE_URL.
+export const sequelize =
+  process.env.DB_DIALECT === 'postgres'
+    ? new Sequelize(process.env.DATABASE_URL as string, { dialect: 'postgres', logging: false })
+    : new Sequelize({
+        dialect: 'sqlite',
+        storage: databasePath,
+        logging: false,
+        dialectOptions: {
+          busyTimeout: 5000,
+        },
+        pool: {
+          max: 1,
+          min: 0,
+          acquire: 10000,
+          idle: 10000,
+        },
+      });
 
 // Enable WAL mode for better concurrent read/write performance
 sequelize.query('PRAGMA journal_mode=WAL;').catch(() => {});

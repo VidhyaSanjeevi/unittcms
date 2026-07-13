@@ -24,8 +24,12 @@ const sqliteOptions = {
   },
 };
 
+// DB_DIALECT: 'sqlite' (default) or 'postgres'. Postgres reads connection info from DATABASE_URL.
+const dbConfig =
+  process.env.DB_DIALECT === 'postgres' ? { dialect: 'postgres', url: process.env.DATABASE_URL } : sqliteOptions;
+
 export default {
-  development: { ...sqliteOptions },
-  test: { ...sqliteOptions },
-  production: { ...sqliteOptions },
+  development: { ...dbConfig },
+  test: { ...dbConfig },
+  production: { ...dbConfig },
 };
