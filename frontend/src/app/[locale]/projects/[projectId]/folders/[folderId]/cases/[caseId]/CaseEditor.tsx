@@ -2,12 +2,12 @@
 import { useState, useEffect, useContext, ChangeEvent, DragEvent } from 'react';
 import { Input, Select, SelectItem, Button, Tooltip, addToast, Badge } from '@heroui/react';
 import { Save, Plus, ArrowLeft, Circle } from 'lucide-react';
-import MarkdownEditor from '@/components/MarkdownEditor';
 import CaseStepsEditor from './CaseStepsEditor';
 import CaseAttachmentsEditor from './CaseAttachmentsEditor';
 import { updateSteps } from './stepControl';
 import { fetchCreateAttachments, fetchDownloadAttachment, fetchDeleteAttachment } from './attachmentControl';
 import CaseTagsEditor from './CaseTagsEditor';
+import MarkdownEditor from '@/components/MarkdownEditor';
 import { fetchCase, updateCase } from '@/utils/caseControl';
 import { priorities, testTypes, templates } from '@/config/selection';
 import { useRouter } from '@/src/i18n/routing';
