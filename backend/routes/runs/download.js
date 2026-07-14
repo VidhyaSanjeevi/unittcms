@@ -28,8 +28,8 @@ export default function (sequelize) {
   RunCase.belongsTo(Case, { foreignKey: 'caseId' });
   Case.belongsToMany(Tags, { through: 'caseTags', foreignKey: 'caseId', otherKey: 'tagId' });
   Tags.belongsToMany(Case, { through: 'caseTags', foreignKey: 'tagId', otherKey: 'caseId' });
-  Case.belongsToMany(Step, { through: 'caseSteps' });
-  Step.belongsToMany(Case, { through: 'caseSteps' });
+  Case.belongsToMany(Step, { through: 'caseSteps', foreignKey: 'caseId', otherKey: 'stepId' });
+  Step.belongsToMany(Case, { through: 'caseSteps', foreignKey: 'stepId', otherKey: 'caseId' });
 
   router.get('/download/:runId', verifySignedIn, verifyProjectVisibleFromRunId, async (req, res) => {
     const { runId } = req.params;
