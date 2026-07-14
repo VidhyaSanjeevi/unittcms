@@ -50,10 +50,10 @@
   "Index": {
     "get_started": "Comece Agora",
     "demo": "Demonstração",
-    "oss_tcms": "Sistema de Gerenciamento de Casos de Teste de Código Aberto",
+    "oss_tcms": "Sistema de Gerenciamento de Casos de Teste",
     "integrate_and_manage": "Integre e gerencie todos os seus testes de software.",
-    "oss_title": "Código Aberto",
-    "oss_detail": "O UnitTCMS é gratuito e de código aberto. A aplicação pode ser auto-hospedada. Pode ser implantada em ambientes com requisitos de segurança rigorosos.",
+    "oss_title": "Auto-hospedado",
+    "oss_detail": "O LKG for IT UnitTCMS pode ser implantado em ambientes com requisitos de segurança rigorosos.",
     "organize_title": "Organize Casos de Teste",
     "organize_detail": "Os casos de teste podem ser organizados por projetos e pastas. A estrutura de UI moderna os torna rápidos.",
     "usability_title": "Usabilidade",
@@ -70,7 +70,7 @@
     "member_management_subtitle": "Apoie o desenvolvimento da equipe adicionando ou removendo membros de projetos. Você pode atribuir funções e definir permissões para cada membro em detalhes. Oferecemos três funções principais: 'Gerente', que gerencia todo o projeto, 'Desenvolvedor', que projeta os testes, e 'Relator', que executa os testes."
   },
   "Header": {
-    "title": "Sistema de Gerenciamento de Casos de Teste de Código Aberto",
+    "title": "Sistema de Gerenciamento de Casos de Teste",
     "description": "Integre e gerencie todos os seus testes de software",
     "docs": "Documentação",
     "roadmap": "Roteiro",
@@ -147,7 +147,7 @@
     "ok": "OK",
     "error": "Erro",
     "api_server": "Servidor da API",
-    "unittcms_version": "Versão do UnitTCMS"
+    "unittcms_version": "Versão do LKG for IT UnitTCMS"
   },
   "Admin": {
     "user_management": "Gerenciamento de Usuários",

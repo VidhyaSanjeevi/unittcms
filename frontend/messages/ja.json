@@ -50,10 +50,10 @@
   "Index": {
     "get_started": "テスト管理を始める",
     "demo": "デモ",
-    "oss_tcms": "オープンソーステストケース管理システム",
+    "oss_tcms": "テストケース管理システム",
     "integrate_and_manage": "ソフトウェア開発にかかわるすべてのテストを統合管理",
-    "oss_title": "オープンソース",
-    "oss_detail": "UnitTCMSは無料でオープンソースです。アプリケーションをセルフホストすることができます。セキュリティ要件の厳しい環境でも導入することができます。",
+    "oss_title": "セルフホスト",
+    "oss_detail": "LKG for IT UnitTCMSはセキュリティ要件の厳しい環境でも導入することができます。",
     "organize_title": "テストケースの整理",
     "organize_detail": "プロジェクトやフォルダーでテストケースを整理できます。モダンなUIフレームワークによりそれらを高速に表示します。",
     "usability_title": "ユーザビリティ",
@@ -70,7 +70,7 @@
     "member_management_subtitle": "プロジェクトにメンバーを追加/削除してチーム開発をサポートします。各メンバーに役割を設定し、権限を細かく管理することが可能です。プロジェクト全体を管理する「管理者」、テストの設計を行う「設計者」、テストの実行を担う「報告者」の3つの主要な役割を提供しています。"
   },
   "Header": {
-    "title": "オープンソーステストケース管理システム",
+    "title": "テストケース管理システム",
     "description": "ソフトウェア開発にかかわるすべてのテストを統合管理",
     "docs": "ドキュメント",
     "roadmap": "ロードマップ",
@@ -147,7 +147,7 @@
     "ok": "正常",
     "error": "エラー",
     "api_server": "APIサーバー",
-    "unittcms_version": "UnitTCMS バージョン"
+    "unittcms_version": "LKG for IT UnitTCMS バージョン"
   },
   "Admin": {
     "user_management": "ユーザー管理",

@@ -17,13 +17,11 @@ import { ArrowRightFromLine, ArrowRightToLine, File, Globe, MoveUpRight, PenTool
 import DropdownAccount from './DropdownAccount';
 import DropdownLanguage from './DropdownLanguage';
 import { ThemeSwitch } from '@/components/ThemeSwitch';
-import { GithubIcon } from '@/components/icons';
 import { locales } from '@/config/selection';
 import { Link, useRouter } from '@/src/i18n/routing';
 import { TokenContext } from '@/utils/TokenProvider';
 import UserAvatar from '@/components/UserAvatar';
 import { LocaleCodeType } from '@/types/locale';
-import Config from '@/config/config';
 
 type NabbarMenuMessages = {
   projects: string;
@@ -57,23 +55,6 @@ export default function HeaderNavbarMenu({ messages, locale }: Props) {
     },
   ];
 
-  if (Config.isDemoSite) {
-    commonLinks.push(
-      {
-        uid: 'docs',
-        href: 'https://kimatata.github.io/unittcms/docs/getstarted/selfhost',
-        label: messages.docs,
-        isExternal: true,
-      },
-      {
-        uid: 'roadmap',
-        href: 'https://kimatata.github.io/unittcms/docs/roadmap/',
-        label: messages.roadmap,
-        isExternal: true,
-      }
-    );
-  }
-
   const router = useRouter();
   const pathname = usePathname();
   async function changeLocale(nextLocale: string) {
@@ -94,7 +75,7 @@ export default function HeaderNavbarMenu({ messages, locale }: Props) {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <Link className="flex justify-start items-center gap-1" href="/" locale={locale}>
             <Image src="/favicon/icon-192.png" width={32} height={32} alt="Logo" />
-            <p className="font-extrabold text-[#4953ac] tracking-tight ms-1 text-lg">UnitTCMS</p>
+            <p className="font-extrabold text-[#4953ac] tracking-tight ms-1 text-lg">LKG for IT UnitTCMS</p>
           </Link>
         </NavbarBrand>
         {commonLinks.map((link) =>
@@ -130,9 +111,6 @@ export default function HeaderNavbarMenu({ messages, locale }: Props) {
       </NavbarContent>
 
       <NavbarContent className="basis-1 pl-4" justify="end">
-        <NextUiLink isExternal href="https://github.com/kimatata/unittcms" aria-label="Github">
-          <GithubIcon className="text-slate-500" />
-        </NextUiLink>
         <ThemeSwitch />
         <div className="hidden md:block">
           <DropdownAccount messages={messages} locale={locale} onItemPress={() => {}} />

@@ -9,14 +9,11 @@ type Props = {
 export default function Footer({ locale }: Props) {
   return (
     <div className="w-full text-center py-2 px-6 flex flex-wrap justify-center items-center gap-4 text-gray-500">
-      <Link href="https://unittcms.org">
+      <Link href="/" locale={locale}>
         <Image src="/favicon/icon-192.png" width={32} height={32} alt="Logo" />
       </Link>
       <div>
-        <span>Copyright © 2024-present </span>
-        <Link href="https://unittcms.org" className={`${NextUiLinkClasses} !text-gray-500 hover:text-gray-700`}>
-          UnitTCMS
-        </Link>
+        <span>Copyright © 2024-present LKG for IT UnitTCMS</span>
       </div>
 
       <Link href={'/health'} locale={locale} className={`${NextUiLinkClasses} !text-gray-500 hover:text-gray-700`}>

@@ -50,10 +50,10 @@
   "Index": {
     "get_started": "Loslegen",
     "demo": "Demo",
-    "oss_tcms": "Open Source Testfall-Management-System",
+    "oss_tcms": "Testfall-Management-System",
     "integrate_and_manage": "Integriere und verwalte alle Softwaretests.",
-    "oss_title": "Open Source",
-    "oss_detail": "UnitTCMS ist kostenlos und Open Source. Die Anwendung kann selbst gehostet werden und ist für Umgebungen mit hohen Sicherheitsanforderungen geeignet.",
+    "oss_title": "Selbst gehostet",
+    "oss_detail": "LKG for IT UnitTCMS kann in Umgebungen mit hohen Sicherheitsanforderungen bereitgestellt werden.",
     "organize_title": "Testfälle organisieren",
     "organize_detail": "Testfälle können nach Projekten und Ordnern organisiert werden. Das moderne UI macht sie schnell.",
     "usability_title": "Benutzbarkeit",
@@ -70,7 +70,7 @@
     "member_management_subtitle": "Füge Mitglieder hinzu oder entferne sie. Rollen und Rechte können detailliert vergeben werden: 'Manager', 'Entwickler', 'Reporter'."
   },
   "Header": {
-    "title": "Open Source Test-Management-System",
+    "title": "Test-Management-System",
     "description": "Integriere und verwalte alle Softwaretests",
     "docs": "Dokumentation",
     "roadmap": "Fahrplan",
@@ -147,7 +147,7 @@
     "ok": "OK",
     "error": "Error",
     "api_server": "API Server",
-    "unittcms_version": "UnitTCMS Version"
+    "unittcms_version": "LKG for IT UnitTCMS Version"
   },
   "Admin": {
     "user_management": "Benutzerverwaltung",
